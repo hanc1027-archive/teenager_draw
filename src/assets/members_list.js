@@ -69,7 +69,7 @@ const members_list = [
             name:"李致翰 傳甯"
         },
     ],
-    [
+    [//第二小隊
         {
             no:"A3-01",
             name:"黃育盈 傳謐"
@@ -151,7 +151,7 @@ const members_list = [
             name:"黃宥榮 傳宥"
         },
     ],
-    [
+    [//第三小隊
         {
             no:"A5-01",
             name:"蔡信寬 傳寬"

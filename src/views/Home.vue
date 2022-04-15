@@ -3,7 +3,7 @@
     <v-row justify="center" align="center">
       <v-spacer></v-spacer>
       <v-col class="mt-4">
-        <h3>點選抽籤鈕，將隨機於每小隊抽出兩位</h3>
+        <h3>點選抽籤鈕，將隨機於每小隊抽出一位</h3>
       </v-col>
       <v-spacer></v-spacer>
     </v-row>
@@ -51,7 +51,8 @@
         :key="index"
       >
         <v-list-item>
-          <br />【第{{ parseInt(index / 2) + 1 }}小隊】<br />
+          <!-- <br />【第{{ parseInt(index / 2) + 1 }}小隊】<br /> -->
+          <br />【第{{ index + 1 }}小隊】<br />
 
           學號：{{ item.no }} <br />
           姓名：{{ item.name }}<br /><br />
@@ -84,13 +85,13 @@ export default {
       this.members_list.forEach((element) => {
         let first_item = element[Math.floor(Math.random() * element.length)];
 
-        let second_item = {};
-        do {
-          second_item = element[Math.floor(Math.random() * element.length)];
-        } while (first_item == second_item);
+        // let second_item = {};
+        // do {
+        //   second_item = element[Math.floor(Math.random() * element.length)];
+        // } while (first_item == second_item);
 
         this.draw_result.push(first_item);
-        this.draw_result.push(second_item);
+        // this.draw_result.push(second_item);
       });
       setTimeout(() => {
         this.isLoading = false;
