@@ -537,14 +537,6 @@ const core_members = [
         name:"李敬慈"
     },
     {
-        no:"A1-02",
-        name:"蔡聰進 傳聰"
-    },
-    {
-        no:"01-01",
-        name:"王興全 傳足"
-    },
-    {
         no:"01-02",
         name:"張竣傑"
     },
@@ -559,10 +551,6 @@ const core_members = [
     {
         no:"A2-01",
         name:"許翰菥 傳棟"
-    },
-    {
-        no:"A2-02",
-        name:"林瑤紅 傳令"
     },
     {
         no:"02-01",
@@ -589,14 +577,6 @@ const core_members = [
         name:"舒姝 傳柔"
     },
     {
-        no:"A3-01",
-        name:"黃育盈 傳謐"
-    },
-    {
-        no:"A3-02",
-        name:"吳嘉芳 傳棻"
-    },
-    {
         no:"03-01",
         name:"連浩宇 傳棠"
     },
@@ -611,10 +591,6 @@ const core_members = [
     {
         no:"A5-01",
         name:"蔡信寬 傳寬"
-    },
-    {
-        no:"A5-02",
-        name:"連棋銘 傳燁"
     },
     {
         no:"05-01",
