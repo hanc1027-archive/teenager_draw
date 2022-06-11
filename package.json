@@ -2,6 +2,8 @@
   "name": "teenager_draw",
   "version": "0.1.0",
   "private": true,
+  "start_url": ".",
+  "homepage": "https://hanc1027-archive.github.io/teenager_draw/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
