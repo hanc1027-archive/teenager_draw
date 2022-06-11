@@ -1,62 +1,55 @@
 <template>
   <v-container>
-    <v-row justify="center" align="center">
-      <v-spacer></v-spacer>
-      <v-col class="mt-4">
-        <h3>點選抽籤鈕，將隨機於每小隊抽出一位</h3>
-      </v-col>
-      <v-spacer></v-spacer>
+    <v-row class="title">
+      <h3>點選抽籤鈕，將抽出三位幸運得主</h3>
     </v-row>
-    <!-- <v-row justify-center>
-     <v-col
-        class="d-flex"
-        cols="8"
-        sm="5"
-        md="3"
-      >
-        <v-select
-          :items="items"
-          label="每小隊人數"
-          outlined
-        ></v-select>
-      </v-col>
-      </v-row> -->
     <v-row justify-center>
       <v-spacer></v-spacer>
       <v-btn @click="draw" class="ma-4">抽籤</v-btn>
-      <v-btn @click="draw_result = []" class="ma-4">清除</v-btn>
+      <v-btn
+        @click="
+          () => {
+            draw_result = [];
+            isLoading = false;
+          }
+        "
+        class="ma-4"
+        >清除</v-btn
+      >
       <v-spacer></v-spacer> </v-row
     ><br />
 
-    <v-row justify-center>
+    <v-row class="content subtitle">
       <v-spacer></v-spacer>
       恭喜以下人員中選
       <v-spacer></v-spacer>
     </v-row>
+    <br />
 
     <center>
-      <img
+      <!-- <img
         width="300"
         src="../assets/loading.gif"
         alt="loading"
         srcset=""
         v-show="isLoading"
-      />
+      /> -->
+      <v-row v-if="isLoading" align="center" justify="center">
+        <v-col class="content" cols="12">
+          學號：{{ randoming_item.no }} <br />
+          姓名：{{ randoming_item.name }}<br /><br />
+        </v-col>
+      </v-row>
     </center>
-    <v-row justify-center class="ml-12" v-if="!isLoading">
+    <v-row v-if="!isLoading" align="center" justify="center">
       <v-col
-        class="d-flex pa-0"
-        cols="6"
+        class="content detail"
+        cols="12"
         v-for="(item, index) in draw_result"
         :key="index"
       >
-        <v-list-item>
-          <!-- <br />【第{{ parseInt(index / 2) + 1 }}小隊】<br /> -->
-          <br />【第{{ index + 1 }}小隊】<br />
-
-          學號：{{ item.no }} <br />
-          姓名：{{ item.name }}<br /><br />
-        </v-list-item>
+        學號：{{ item.no }} <br />
+        姓名：{{ item.name }}<br /><br />
       </v-col>
     </v-row>
   </v-container>
@@ -64,39 +57,70 @@
 
 <script>
 // @ is an alias to /src
-import members from "../assets/members_list";
+import { members_list_no_sort, core_members } from "../assets/members_list";
 
 export default {
   name: "Home",
-  components: {},
   data() {
     return {
-      items: [1, 2, 3, 4, 5, 6],
-      members_list: members,
+      members_list_no_sort: members_list_no_sort,
+      core_members: core_members,
       draw_result: [],
       isLoading: false,
+      randoming_item: {
+        no: "",
+        name: "",
+      },
+      timeSetting: null,
     };
   },
   methods: {
+    randoming() {
+      this.timeSetting = setInterval(() => {
+        this.members_list_no_sort.sort(() => Math.random() - 0.5);
+        this.randoming_item = this.members_list_no_sort[0];
+      }, 50);
+    },
     draw() {
       this.isLoading = true;
-
       this.draw_result = [];
-      this.members_list.forEach((element) => {
-        let first_item = element[Math.floor(Math.random() * element.length)];
+      this.core_members.sort(() => Math.random() - 0.5);
 
-        // let second_item = {};
-        // do {
-        //   second_item = element[Math.floor(Math.random() * element.length)];
-        // } while (first_item == second_item);
+      for (let index = 0; index < 3; index++) {
+        this.draw_result.push(this.core_members[index]);
+      }
 
-        this.draw_result.push(first_item);
-        // this.draw_result.push(second_item);
-      });
       setTimeout(() => {
         this.isLoading = false;
-      }, 1000);
+      }, 1500);
+    },
+  },
+  watch: {
+    isLoading(newValue) {
+      if (newValue) this.randoming();
+      else clearInterval(this.timeSetting);
     },
   },
 };
 </script>
+
+<style scoped>
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 8px;
+}
+.subtitle {
+  color: red;
+}
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+}
+.detail{
+  float: left;
+}
+</style>
