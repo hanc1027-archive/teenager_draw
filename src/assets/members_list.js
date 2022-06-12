@@ -533,10 +533,6 @@ const members_list_no_sort = [
 
 const core_members = [
     {
-        no:"A-0",
-        name:"李敬慈"
-    },
-    {
         no:"01-02",
         name:"張竣傑"
     },
@@ -547,10 +543,6 @@ const core_members = [
     {
         no:"01-04",
         name:"王亭凱 法駿"
-    },
-    {
-        no:"A2-01",
-        name:"許翰菥 傳棟"
     },
     {
         no:"02-01",
