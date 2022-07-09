@@ -11,6 +11,7 @@
           () => {
             draw_result = [];
             isLoading = false;
+            showWinImg = false;
           }
         "
         class="ma-4"
@@ -52,6 +53,14 @@
         姓名：{{ item.name }}<br /><br />
       </v-col>
     </v-row>
+    <v-row v-if="showWinImg" align="center" justify="center">
+      <img
+        src="../assets/img/06.gif"
+        width="150"
+        alt=""
+        srcset=""
+      />
+    </v-row>
   </v-container>
 </template>
 
@@ -72,6 +81,17 @@ export default {
         name: "",
       },
       timeSetting: null,
+      winning_img_list: [
+        "01.png",
+        "02.png",
+        "03.png",
+        "04.png",
+        "05.png",
+        "06.gif",
+        "07.png",
+      ],
+      winning_img_path: "",
+      showWinImg: false,
     };
   },
   methods: {
@@ -81,8 +101,13 @@ export default {
         this.randoming_item = this.members_list_no_sort[0];
       }, 50);
     },
+    get_win_img_random() {
+      let random_index = Math.floor(Math.random() * this.winning_img_list.length);
+      this.winning_img_path = "../assets/img/"+this.winning_img_list[random_index];
+    },
     draw() {
       this.isLoading = true;
+      this.showWinImg = false;
       this.draw_result = [];
       this.core_members.sort(() => Math.random() - 0.5);
 
@@ -92,6 +117,9 @@ export default {
 
       setTimeout(() => {
         this.isLoading = false;
+        this.get_win_img_random();
+        this.showWinImg = true;
+        console.log("winning_img_path:",this.winning_img_path)
       }, 1500);
     },
   },
@@ -120,7 +148,7 @@ export default {
   justify-content: center;
   align-content: center;
 }
-.detail{
+.detail {
   float: left;
 }
 </style>
