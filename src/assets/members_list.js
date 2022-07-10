@@ -606,11 +606,11 @@ const core_members = [
     },
     {
         no:"02-12",
-        name:"謝宛儒"
+        name:"謝育霖"
     },
     {
         no:"02-13",
-        name:"謝育霖"
+        name:"謝宛儒"
     },
     {
         no:"02-14",
