@@ -36,7 +36,8 @@
         v-show="isLoading"
       /> -->
       <v-row v-if="isLoading" align="center" justify="center">
-        <v-col class="content" cols="12">
+        <v-col class="content" cols="12" v-for="(item, index) in draw_result"
+        :key="index">
           學號：{{ randoming_item.no }} <br />
           姓名：{{ randoming_item.name }}<br /><br />
         </v-col>
@@ -55,7 +56,7 @@
     </v-row>
     <v-row v-if="showWinImg" align="center" justify="center">
       <img
-        src="../assets/img/02.png"
+        src="../assets/img/07.png"
         width="150"
         alt=""
         srcset=""
