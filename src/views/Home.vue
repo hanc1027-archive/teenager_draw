@@ -56,7 +56,7 @@
     </v-row>
     <v-row v-if="showWinImg" align="center" justify="center">
       <img
-        src="../assets/img/07.png"
+        src="../assets/img/03.png"
         width="150"
         alt=""
         srcset=""
