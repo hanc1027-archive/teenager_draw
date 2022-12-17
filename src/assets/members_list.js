@@ -645,10 +645,6 @@ const core_members = [
         name: "謝育霖"
     },
     {
-        no: "04-05",
-        name: "謝宛儒"
-    },
-    {
         no: "04-11",
         name: "林祺富 傳豐"
     },
