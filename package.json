@@ -2,6 +2,7 @@
   "name": "teenager_draw",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://hanc1027-archive.github.io/teenager_draw/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
