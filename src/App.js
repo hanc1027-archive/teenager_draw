@@ -17,7 +17,7 @@ export default function App(props) {
   const [drawResult, setDrawResult] = useState([{ no: "", name: "" }]);
   const [isLoading, setIsLoading] = useState(false);
   const [randomNoList, setRandomNoList] = useState([]);
-  const [duplicateList, setDuplicateList] = useState([...members_list_no_sort]);
+  var duplicateList = [...members_list_no_sort];
 
   return (
     <>
