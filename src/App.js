@@ -90,6 +90,7 @@ export default function App(props) {
               borderWidth: "1px",
               borderStyle: "solid",
               padding: "20px",
+              fontSize:"30px"
             }}
           >
             <center>
