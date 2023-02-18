@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/teenager_draw/static/css/main.e6c13ad2.css",
+    "main.js": "/teenager_draw/static/js/main.58fd5849.js",
+    "static/js/496.fe12c637.chunk.js": "/teenager_draw/static/js/496.fe12c637.chunk.js",
+    "index.html": "/teenager_draw/index.html",
+    "main.e6c13ad2.css.map": "/teenager_draw/static/css/main.e6c13ad2.css.map",
+    "main.58fd5849.js.map": "/teenager_draw/static/js/main.58fd5849.js.map",
+    "496.fe12c637.chunk.js.map": "/teenager_draw/static/js/496.fe12c637.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.58fd5849.js"
+  ]
+}
